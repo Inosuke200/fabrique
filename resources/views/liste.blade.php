@@ -13,15 +13,16 @@
 <div class="container-fluid bg-danger entete">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 offset-lg-3   mt-5 ">
+            <div class="col-lg-6 offset-lg   mt-5 ">
                 <nav class="navbar navbar-expand-md navbar-light ">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                   <!--<a href="/table"> <button type="button" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accueil</button></a>-->
-                   <a href=""> <input type="button" value=Accueil class="btn btn-outline-primary ml-5"></a>
-                   <a href="/logout"> <input type="button" value="Déconnexion" class="btn btn-outline-primary ml-5"></a>
+                    <div class="col"><img src="/images/photo_footer.png" alt="" width="%" height="50px"></div>
+                    <div class="collapse navbar-collapse  offset-lg-10" id="navbarTogglerDemo01">
+                   <!--<a href="/table"> <button type="button" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accueil</button></a>
+                   <a href=""> <input type="button" value=Accueil class="btn btn-light ml-5"></a>-->
+                   <a href="/logout"> <input type="button" value="Déconnexion" class="btn btn-light ml-5 "></a>
                     <!--<button type="button" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Réservations</button>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <button type="button" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listes</button>-->
@@ -62,57 +63,36 @@
     </div>
  </div> 
 <div class="container">
-<h2 class="mt-2">Possibilité d'effectuer une réservation</h2>
+<h1 class="mt-5 text-dark">Possibilité d'éffectuer une réservation</h1>
 <table class="table table-bordered table-striped table-responsive-stack" id="tableOne">
    <thead class="thead-dark">
       <tr>
          <th>Date</th>
          <th>Jours</th>
-         <th>Heure</th>
+         <th>debut</th>
+         <th>fin</th>
          <th>Places disponibles</th>
          <th>Reservations</th>
       </tr>
    </thead>
-   <!--<tbody>
-      <tr>
-         <td>Apple</td>
-         <td>Green and Red</td>
-         <td>Sweet and Tart</td>
-         <td>Mild Sweetness</td>
-         <td>Mild Sweetness</td>
-      </tr>
-      <tr>
-         <td>Banana</td>
-         <td>Yellow</td>
-         <td>Sweet and Mushy</td>
-         <td>Mild Sweetness</td>
-         <td>Mild Sweetness</td>
-      </tr>
-      <tr>
-         <td>Mango</td>
-         <td>Yellowish Green</td>
-         <td>Tangy</td>
-         <td>Mild Sweetness</td>
-         <td>Mild Sweetness</td>
-      </tr>
-      <tr>
-         <td>Orange</td>
-         <td>Orange</td>
-         <td>Sweet and Tangy</td>
-         <td>Mild Sweetness</td>
-         <td>Mild Sweetness</td>
-      </tr>
-      <tr>
-         <td>Blueberry</td>
-         <td>Blue</td>
-         <td>Mild Sweetness</td>
-         <td>Mild Sweetness</td>
-         <td>Mild Sweetness</td>
-      </tr>
-      
-   </tbody>-->
+   @foreach($liste as $liste)
+    <tr>
+        
+        <td>{{$liste->date}}</td>
+        <td>{{$liste->jours}}</td>
+        <td>{{$liste->debut}}</td>
+        <td>{{$liste->fin}}</td>
+        <td>{{$liste->places}}</td>
+        <td class="contain">
+         <form action="" method="post">@csrf
+            <input type="hidden" value="{{$liste->id}}" name="id">
+            <button type="submit" class="btn btn-dark">Réserver</button>
+          </form>
+        </td>
+    </tr>
+    @endforeach
 </table>
-   <h2 class="mb-2">Liste des places réservées</h2>
+   <h1 class="mb-2">Liste des places réservées</h1>
    <table class="table table-bordered table-striped table-responsive-stack" id="tableTwo">
    <thead class="thead-dark">
       <tr>

@@ -15,6 +15,6 @@ class MailController extends Controller
             ];
 
             Mail::to('ismaelouiya999@gmail.com')->send(new TestMail($details));
-            return view('connexion');
+            return view('message');
     }
 }

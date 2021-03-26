@@ -1,0 +1,21 @@
+.entete{
+    width: 100%;
+    height: 150px;
+}
+/*#borde{
+    margin-top: 300px;
+    position: relative;
+    
+}
+#borde p{
+    font-size: 50px;
+    font-weight: bold;
+}*/
+ .m-auto{
+     margin-left: auto;
+ }
+ footer{
+     background-color: rgb(77, 32, 0);
+ }
+
+

@@ -12,10 +12,6 @@
 <body>
 
 
-<div class="text-center mt-5 ">
-        <h1 class="text-danger">Le mail a été envoyé avec succès. Veuillez vérifié votre boîte mail et vous connecter</h1>
-    </div>
-
 
 <div class="container d-flex">
     <div class="image mt-5">

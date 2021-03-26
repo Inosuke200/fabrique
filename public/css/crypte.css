@@ -1,6 +1,3 @@
 body{
-    background: url( ../images/back.png) no-repeat;
-}
-:hover{
-    background: url(../images/pro1.png) no-repeat;
+    background: url( ../images/back.png) no-repeat 20% 50%;
 }

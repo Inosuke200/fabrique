@@ -19,12 +19,12 @@
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a href="/log"> <input type="button" value="Programmer" class="btn btn-outline-primary"></a>
+                        <a href="table"> <input type="button" value="Programmer" class="btn btn-outline-primary"></a>
                    <!--<a href="/log"> <button type="submit" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programmer</button></a>-->
                     <!-- <button type="button" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Réservations</button>-->
-                         <a href="/list"> <input type="button" value="Réservations" class="btn btn-outline-primary ml-4"></a>
+                         <a href="liste"> <input type="button" value="Réservations" class="btn btn-outline-primary ml-4"></a>
                     <!--<button type="button" class="btn btn-outline-primary  dropdown-toggle-split ml-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inscrits</button>-->
-                          <a href="/inscrit"> <input type="button" value="Les inscrits" class="btn btn-outline-primary ml-4"></a>
+                          <a href="inscrit"> <input type="button" value="Les inscrits" class="btn btn-outline-primary ml-4"></a>
                       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
                         <div class="btn-group ml-5 ">
@@ -36,7 +36,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Prenom</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Deconnexion</a>
+                            <a class="dropdown-item" href="/logout">Deconnexion</a>
                           </div>
                         </div>
                         </li>

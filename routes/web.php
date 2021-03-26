@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberUser;  // A ce niveau j'appelle le chemin où se trouve mon contrôleur( le controllers c'est juste une classe)
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\redirecte;
-// use App\Http\Controllers\affiche;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\UtilisateursController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,11 +54,6 @@ Route::get('/send-email', [MailController::class,'sendEmail']);
 
 Route::view('/message', 'message');
 
-// Route::get('/utilisateurs', function () { 
-//     $utilisateur = App\utilisateur::all();   
-//     return view('utilisateurs', ['utilisateurs' => $utilisateur,]);
-// });
-// Route::get('/utilisateurs', [affiche::class, 'recup']);
 Route::get('/utilisateur', function(){
 
     
@@ -68,3 +63,15 @@ Route::get('/utilisateur', function(){
 });
 
 Route::get('/inscrit', [MemberUser::class, 'inscrit']);
+
+Route::POST('/inscrit', [MemberUser::class, 'delete'])->name('inscritdelete');
+
+Route::POST('/validation', [MemberUser::class, 'validation'])->name('inscritValidate');
+
+
+Route::get('/programmeliste', [UtilisateursController::class, 'programme']);
+
+Route::view('table', 'table');
+Route::POST('table', [UtilisateursController::class, 'program']);
+
+Route::get('/liste', [UtilisateursController::class, 'liste']);

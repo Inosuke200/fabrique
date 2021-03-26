@@ -13,4 +13,5 @@ class redirecte extends Controller
         return view('connexion');
     }
 }
+
  
