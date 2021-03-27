@@ -43,7 +43,7 @@
                 <tr>
                     <td class="text-danger">{{$utilisateur->name}}</td>
                     <td class="text-danger">{{$utilisateur->forname}}</td>
-                    <td class="text-white">{{$utilisateur->email}}</td>
+                    <td class="text-danger">{{$utilisateur->email}}</td>
                     <td>
                              <div class="d-flex ">
                                 <div class="text-center mr-3">

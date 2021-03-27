@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Mail\TestMail;
 use Illuminate\Http\Request;
 use App\Models\utilisateur;
 use Illuminate\Support\Facades\Hash;
@@ -12,9 +14,39 @@ class MemberUser extends Controller
 
 
     public function inscrit(){
-        $utilisateur = utilisateur::all();
+        $utilisateur = DB::select('select name, forname, email, statut from utilisateurs where statut = 0 ');
         return view('inscrit', compact('utilisateur'));
     }
+
+
+
+    // public function insertData(){
+
+    //     request()->validate(
+    //         [
+    //             'nom'=> ['required','string'],
+    //             'prenom'=> ['required','string'],
+    //             'email'=> ['required','email'],
+    //             'password'=> ['required','confirmed','min:3','max:6'],
+    //             'password_confirmation'=> ['required'],
+    //         ]
+    //         );
+            
+    // $utilisateur = utilisateur::create([
+    //             'nom' => request('nom'),
+    //             'prenom' => request('prenom'),
+    //             'email' => request('email'),
+    //             'password' => bcrypt(request('password')),
+               
+    //     ]) ;
+
+    //              Mail::to($utilisateur)->send(new TestMail($utilisateur));
+    //              return view ('message');
+
+    // }
+
+
+
 
 
      public function insertData(Request $req){
@@ -40,6 +72,7 @@ class MemberUser extends Controller
     public function validation(Request $request){
         $req = $request->input('validate');
         $validate = DB::update('update utilisateurs set statut = 1 where email= ?', [$req]);
-        return redirect('inscrit');
+        return redirect ()->route('inscrit');
     }
+   
 }

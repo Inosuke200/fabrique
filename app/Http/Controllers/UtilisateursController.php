@@ -11,16 +11,8 @@ class UtilisateursController extends Controller
 {
 
 
-
-    
-
-    public function liste(){
-        $liste = programme::all();//on accéde à la constante all dpuis l'exterieur de la classe en utilisant le nom de la table utilisateur de ma base donnée et ::
-        return view('liste', compact('liste'));
-    }
-
     public function programme(){
-        $programme = programme::all();//on accéde à la constante all dpuis l'exterieur de la classe en utilisant le nom de la table utilisateur de ma base donnée et ::
+        $programme = programmes::all();//on accéde à la constante all dpuis l'exterieur de la classe en utilisant le nom de la table utilisateur de ma base donnée et ::
         return view('programmeliste', compact('programme'));
     }
 

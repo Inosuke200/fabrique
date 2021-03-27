@@ -10,6 +10,7 @@ class UserAuth extends Controller
         $data = $req-> input();
         $req-> session()->put('connexion',$data['email']);
         echo session('email');
+      
         return redirect('liste');
 
     }

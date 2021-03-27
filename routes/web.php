@@ -62,7 +62,7 @@ Route::get('/utilisateur', function(){
 
 });
 
-Route::get('/inscrit', [MemberUser::class, 'inscrit']);
+Route::get('/inscrit', [MemberUser::class, 'inscrit'])->name('inscrit');
 
 Route::POST('/inscrit', [MemberUser::class, 'delete'])->name('inscritdelete');
 
